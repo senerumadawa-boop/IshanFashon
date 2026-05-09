@@ -1,0 +1,941 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><title>IshanFashion </title><style>*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:Arial;
+}
+
+body{
+  background:#f4f4f4;
+  color:#111;
+}
+
+.dark{
+  background:#111;
+  color:white;
+}
+
+/* HEADER */
+
+header{
+  background:black;
+  color:white;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+}
+
+.logo{
+  font-size:30px;
+  font-weight:bold;
+  color:#ffd000;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  margin:0 10px;
+}
+
+.header-icons{
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+
+#darkBtn{
+  border:none;
+  background:#ffd000;
+  padding:10px;
+  border-radius:50%;
+  cursor:pointer;
+}
+
+.cart-icon{
+  position:relative;
+  font-size:22px;
+}
+
+#cartCount{
+  position:absolute;
+  top:-10px;
+  right:-10px;
+  background:red;
+  color:white;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:12px;
+}
+
+/* HERO */
+
+.hero{
+  height:90vh;
+  background:url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1400') center/cover;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+}
+
+.overlay{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+  position:relative;
+  color:white;
+  text-align:center;
+}
+
+.hero-content h1{
+  font-size:60px;
+}
+
+.hero-content p{
+  margin:20px 0;
+  font-size:20px;
+}
+
+.hero-btn{
+  background:#ffd000;
+  color:black;
+  padding:14px 35px;
+  text-decoration:none;
+  border-radius:10px;
+  font-weight:bold;
+}
+
+/* SECTIONS */
+
+section{
+  padding:70px 8%;
+}
+
+h2{
+  text-align:center;
+  margin-bottom:40px;
+  font-size:40px;
+}
+
+/* ABOUT */
+
+.about{
+  text-align:center;
+}
+
+.about p{
+  max-width:700px;
+  margin:auto;
+  line-height:1.8;
+}
+
+/* SEARCH */
+
+.search-section{
+  text-align:center;
+}
+
+#searchInput{
+  width:70%;
+  padding:15px;
+  border-radius:10px;
+  border:1px solid #ccc;
+  font-size:18px;
+}
+
+/* GALLERY */
+
+.gallery-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.gallery-container img{
+  width:100%;
+  height:300px;
+  object-fit:cover;
+  border-radius:15px;
+}
+
+/* PRODUCTS */
+
+.product-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:white;
+  border-radius:15px;
+  overflow:hidden;
+  box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.dark .card{
+  background:#222;
+}
+
+.card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+}
+
+.card h3,
+.card p{
+  padding:10px 20px;
+}
+
+.size{
+  width:calc(100% - 40px);
+  margin:0 20px 15px;
+  padding:10px;
+}
+
+.btns{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  padding:0 20px 20px;
+}
+
+.btns button{
+  padding:12px;
+  border:none;
+  border-radius:8px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.btns button:first-child{
+  background:black;
+  color:white;
+}
+
+.btns button:last-child{
+  background:#25D366;
+  color:white;
+}
+
+/* REVIEWS */
+
+.review-box{
+  background:white;
+  padding:30px;
+  margin-bottom:20px;
+  border-radius:15px;
+  text-align:center;
+}
+
+.dark .review-box{
+  background:#222;
+}
+
+/* INSTAGRAM */
+
+.insta-box{
+  text-align:center;
+}
+
+.insta-box a{
+  text-decoration:none;
+  font-size:25px;
+  color:#ff006a;
+}
+
+/* PAYMENT */
+
+.pay-icons{
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  font-size:60px;
+}
+
+/* CONTACT */
+
+.contact{
+  background:black;
+  color:white;
+  text-align:center;
+}
+
+.contact a{
+  display:inline-block;
+  margin-top:20px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  padding:12px 30px;
+  border-radius:10px;
+}
+
+/* FOOTER */
+
+footer{
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:20px;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+  header{
+    flex-direction:column;
+    gap:20px;
+  }
+
+  nav{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero-content h1{
+    font-size:40px;
+  }
+
+}</style></head><body><!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>IshanFashion</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+</head>
+
+<body>
+
+<!-- ================= HEADER ================= -->
+
+<header>
+
+  <div class="logo">
+    IshanFashion
+  </div>
+
+  <nav>
+
+    <a href="#home">Home</a>
+
+    <a href="#mens">Mens</a>
+
+    <a href="#girls">Girls</a>
+
+    <a href="#print">Print T-Shirts</a>
+
+    <a href="#reviews">Reviews</a>
+
+    <a href="#contact">Contact</a>
+
+  </nav>
+
+  <div class="header-icons">
+
+    <button id="darkBtn">
+      <i class="fa-solid fa-moon"></i>
+    </button>
+
+    <div class="cart-icon">
+
+      <i class="fa-solid fa-cart-shopping"></i>
+
+      <span id="cartCount">0</span>
+
+    </div>
+
+  </div>
+
+</header>
+
+
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+  <div class="overlay"></div>
+
+  <div class="hero-content">
+
+    <h1>Welcome To IshanFashion</h1>
+
+    <p>
+      Trendy Mens Wear, Girls Fashion & Custom Print T-Shirts
+    </p>
+
+    <a href="#mens" class="hero-btn">
+      Shop Now
+    </a>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= ABOUT ================= -->
+
+<section class="about">
+
+  <h2>About Us</h2>
+
+  <p>
+
+    IshanFashion is a modern fashion store providing
+    stylish menswear, girls fashion and custom print
+    t-shirts with premium quality and affordable prices.
+
+  </p>
+
+</section>
+
+
+
+
+
+<!-- ================= SEARCH ================= -->
+
+<section class="search-section">
+
+  <input
+  type="text"
+  id="searchInput"
+  placeholder="Search Products...">
+
+</section>
+
+
+
+
+
+<!-- ================= GALLERY ================= -->
+
+<section class="gallery">
+
+  <h2>Fashion Gallery</h2>
+
+  <div class="gallery-container">
+
+    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800">
+
+    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800">
+
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800">
+
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800">
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= MENS ================= -->
+
+<section class="products" id="mens">
+
+  <h2>Mens Clothes</h2>
+
+  <div class="product-container">
+
+
+
+    <!-- Product 1 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800">
+
+      <h3>Oversized T-Shirt</h3>
+
+      <p>Rs. 3200</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Oversized T-Shirt')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Product 2 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1473966968600-fa801b869a1a?q=80&w=800">
+
+      <h3>Cargo Pants</h3>
+
+      <p>Rs. 4800</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Cargo Pants')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Product 3 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=800">
+
+      <h3>Fashion Hoodie</h3>
+
+      <p>Rs. 5500</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Fashion Hoodie')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= GIRLS ================= -->
+
+<section class="products" id="girls">
+
+  <h2>Girls Clothes</h2>
+
+  <div class="product-container">
+
+
+
+    <!-- Product 1 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800">
+
+      <h3>Crop Top</h3>
+
+      <p>Rs. 2800</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Crop Top')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Product 2 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=800">
+
+      <h3>Fashion Dress</h3>
+
+      <p>Rs. 6500</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Fashion Dress')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= PRINT ================= -->
+
+<section class="products" id="print">
+
+  <h2>Print T-Shirts</h2>
+
+  <div class="product-container">
+
+
+
+    <!-- Product 1 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=800">
+
+      <h3>Anime Print T-Shirt</h3>
+
+      <p>Rs. 3500</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Anime Print T-Shirt')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- Product 2 -->
+
+    <div class="card productCard">
+
+      <img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=800">
+
+      <h3>Gaming Print T-Shirt</h3>
+
+      <p>Rs. 3700</p>
+
+      <select class="size">
+
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+
+      </select>
+
+      <div class="btns">
+
+        <button onclick="addToCart()">
+          Add To Cart
+        </button>
+
+        <button onclick="orderNow('Gaming Print T-Shirt')">
+          WhatsApp Order
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= REVIEWS ================= -->
+
+<section class="reviews" id="reviews">
+
+  <h2>Customer Reviews</h2>
+
+  <div class="review-box">
+
+    <p>
+      "Super Quality Products 🔥"
+    </p>
+
+    <h4>- Nimal</h4>
+
+  </div>
+
+  <div class="review-box">
+
+    <p>
+      "Fast Delivery & Great Service ❤️"
+    </p>
+
+    <h4>- Kavindi</h4>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= INSTAGRAM ================= -->
+
+<section class="instagram">
+
+  <h2>Instagram Feed</h2>
+
+  <div class="insta-box">
+
+    <a href="#">
+      @IshanFashion
+    </a>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= PAYMENT ================= -->
+
+<section class="payment">
+
+  <h2>Online Payments</h2>
+
+  <div class="pay-icons">
+
+    <i class="fa-brands fa-cc-visa"></i>
+
+    <i class="fa-brands fa-cc-mastercard"></i>
+
+    <i class="fa-brands fa-paypal"></i>
+
+  </div>
+
+</section>
+
+
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <h2>Contact Us</h2>
+
+  <p>0776874655</p>
+
+  <a href="https://wa.me/94776874655">
+
+    Chat On WhatsApp
+
+  </a>
+
+</section>
+
+
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <p>
+    © 2026 IshanFashion | All Rights Reserved
+  </p>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html><script>// DARK MODE
+
+let darkBtn =
+document.getElementById("darkBtn");
+
+darkBtn.onclick = () => {
+
+  document.body.classList.toggle("dark");
+
+};
+
+// CART SYSTEM
+
+let cart = 0;
+
+function addToCart(){
+
+  cart++;
+
+  document.getElementById("cartCount").innerText = cart;
+
+  alert("Product Added To Cart");
+
+}
+
+// WHATSAPP ORDER
+
+function orderNow(product){
+
+  let phone = "94776874655";
+
+  let message =
+`Hello can I get this?
+
+Product: ${product}
+
+Please send more details.`;
+
+  let url =
+`https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+
+  window.open(url,"_blank");
+
+}
+
+// SEARCH SYSTEM
+
+let searchInput =
+document.getElementById("searchInput");
+
+searchInput.addEventListener("keyup", ()=>{
+
+  let filter =
+  searchInput.value.toLowerCase();
+
+  let products =
+  document.querySelectorAll(".productCard");
+
+  products.forEach((item)=>{
+
+    let text =
+    item.innerText.toLowerCase();
+
+    if(text.includes(filter)){
+
+      item.style.display = "block";
+
+    }
+
+    else{
+
+      item.style.display = "none";
+
+    }
+
+  });
+
+});</script></body></html>
